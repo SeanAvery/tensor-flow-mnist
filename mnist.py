@@ -5,6 +5,12 @@ import tensorflow as tf
 
 x = tf.placeholder(tf.float32, [None, 784])
 
-print('x', x) 
+W = tf.Variable(tf.zeros([784, 10]))
+
+b = tf.Variable(tf.zeros([10]))
+
+print('W', W)
+print('b', b)
+
 
 
