@@ -7,8 +7,9 @@ node3 = tf.add(node1, node2)
 a = tf.placeholder(tf.float32)
 b = tf.placeholder(tf.float32)
 adder_node = a + b
+add_n_triple = adder_node * 3
 
 sess = tf.Session()
-print(sess.run(adder_node, {a: 5, b: 7}))
+print(sess.run(add_n_triple, {a: 5, b: 7}))
 
  
