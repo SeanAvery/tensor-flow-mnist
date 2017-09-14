@@ -20,15 +20,15 @@ loss = tf.reduce_sum(squared_deltas)
 
 sess = tf.Session()
 init = tf.global_variables_initializer()
+
+optimizer = tf.train.GradientDescentOptimizer(0.01)
+train = optimizer.minimize(loss)
+
 sess.run(init)
 
-fixW = tf.assign(W, [-1.])
-fixb = tf.assign(b, [1.])
+for i in range(1000):
+    sess.run(train, {x: [1, 2, 3, 4], y: [0, -1, -2, -3]})
 
-sess.run([fixW, fixb])
-
-print(sess.run(linear_model, {x: [1, 2, 3, 4]}))
-
-print(sess.run(loss, {x: [1, 2, 3, 4], y: [0, -1, -2, -3]}))
+print(sess.run([W, b]))
 
  
