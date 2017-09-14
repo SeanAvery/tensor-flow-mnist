@@ -17,4 +17,8 @@ cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=
 
 train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
 
+sess = tf.InteractiveSession()
+
+tf.global_variables_initializer().run()
+
 
